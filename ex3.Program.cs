@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fibonacci
 {
-    /// <summary>
-    ///Given an input which is a number the function returns its Fibonacci series 
-    /// until the next number in the series is greater than the number received.
-    /// </summary>
+   
     class Program
     {
         static void Main(string[] args)

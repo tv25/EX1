@@ -7,10 +7,6 @@ using System.Threading.Tasks;
 
 namespace numbers_sum_largest
 {
-    /// <summary>
-    /// The function receives an input of positive integers until the number 1- 
-    /// is received and at the end prints the sequence of the three numbers whose sum is the largest.
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

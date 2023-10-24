@@ -6,10 +6,6 @@ using System.Threading.Tasks;
 
 namespace largest_positive_number
 {
-    /// <summary>
-    /// A function that accepts an input of positive integers numbers until the number -1 is entered, 
-    /// and at the end returns the largest positive number.
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

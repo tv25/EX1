@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cars
 {
-    /// <summary>
-    /// Car class
-    ///A class that describes most cars
-    ///It has functions: displaying information,get speed, speeding up, slowing down, stopping a car.
-    /// </summary>
+   
     public abstract class Car
     {
 

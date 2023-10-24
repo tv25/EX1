@@ -11,14 +11,6 @@ namespace Cars
 {
     class Program
     {
-        /// <summary>
-        /// A function that allows receiving information for vehicles.
-        //The user has the option of choosing a Lexus or Audi vehicle
-        //and view information or perform actions about the vehicle: viewing the vehicle's speed, 
-        //stopping the car, speeding up the car and slowing down the car.
-        //In addition to the Lexus car, there is an option to turn the songs on and off
-        /// </summary>
-        /// 
         static int ShowMenuOfFunction(Car car)
         {
             int actionChoice;

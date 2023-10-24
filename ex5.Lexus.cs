@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cars
 {
-    /// <summary>
-    /// The "Lexus" car class inherits from the car class
-    ///It can also play songs that are in the car's song system.
-    /// </summary>
+   
     class Lexus : Car
     {
         private bool isPlayingMusic;
