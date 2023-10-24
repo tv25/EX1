@@ -15,49 +15,30 @@ namespace Fibonacci
         static void Main(string[] args)
         {
 
-            int FibonacciNumber, sum;
-            Console.WriteLine("Please enter a positive number,to finish Please press -1:");
-            do
+            int FibonacciNumber, sumMembersOfFibonacci;
+            Console.WriteLine("Please enter a positive number:");
+            string userNumber = Console.ReadLine();
+            if (!(int.TryParse(userNumber, out FibonacciNumber)) || FibonacciNumber <= 0)
             {
-                string userNumber = Console.ReadLine();
-                //checl if the input is integer
-                if (int.TryParse(userNumber, out FibonacciNumber))
-                {
-                    //there is no Fibonacci series to negative numbers and 0
-                    //if the user insert -1 its meen to finish
-                    if (FibonacciNumber < -1 || FibonacciNumber == 0)
-                    {
-                        Console.WriteLine("There is no Fibonacci series to 0 or negative number");
-                    }
-                    else
-                    {
-                        List<int> myList = new List<int>(2);
-                        // Add elements to the list
-                        myList.Add(0);
-                        myList.Add(1);
-                        Console.Write(myList[0] + " ");
-                        Console.Write(myList[1] + " ");
-                        sum = myList[0] + myList[1];
-                        //print the numbers that in the series until the next number in the series is greater than the number received
-                        while (sum <= FibonacciNumber)
-                        {
-                            Console.Write(sum + " ");
-                            myList[0] = myList[1];
-                            myList[1] = sum;
-                            sum = myList[0] + myList[1];
-                        }
-                    }
+                Console.WriteLine("invalid input");
+                Console.ReadLine();
+                return;
+            }
+            List<int> membersOfFibonacci = new List<int>() { 0, 1 };
+            Console.Write("{0} {1}", membersOfFibonacci[0], membersOfFibonacci[1]);
+            sumMembersOfFibonacci = membersOfFibonacci[0] + membersOfFibonacci[1];
 
-                }
-                else
-                {
-                    Console.WriteLine("Please enter valid number");
-
-                }
-
-                Console.WriteLine();
-            } while (FibonacciNumber != -1);
-
+            while (sumMembersOfFibonacci <= FibonacciNumber)
+            {
+                Console.Write(" " + sumMembersOfFibonacci);
+                membersOfFibonacci[0] = membersOfFibonacci[1];
+                membersOfFibonacci[1] = sumMembersOfFibonacci;
+                sumMembersOfFibonacci = membersOfFibonacci[0] + membersOfFibonacci[1];
+            }
+            Console.ReadLine();
         }
     }
 }
+
+
+

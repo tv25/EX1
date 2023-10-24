@@ -11,80 +11,54 @@ namespace Cars
     ///A class that describes most cars
     ///It has functions: displaying information,get speed, speeding up, slowing down, stopping a car.
     /// </summary>
-    class Car
+    public abstract class Car
     {
 
-        // type- the type of the car
-        // Speed - the speed of the car
+        protected string _type;
+        protected int _speed;
 
-        protected string type;
-        protected int speed;
+        /* public Car(string type)
+         {
+             this.type = type;
+             this.speed = 0;
+         }*/
 
-        //constructor
-        public Car(string type)
+        public void PrintSpeed()
         {
-            this.type = type;
-            this.speed = 0;
+            Console.WriteLine($"The Car's speed is: {_speed}");
+
         }
-
-        //return the car's speed
-
-        public void GetSpeed()
-        {
-            Console.WriteLine("The Car's speed is: " + speed);
-        }
-
-        //return information about the car: type and speed
 
         public string GetData()
         {
-            return $"Type: {type}, Speed: {speed} km/h";
+            return $"Type: {_type}, Speed: {_speed} km/h";
         }
 
-        //Increases car's speed according to the user's request
-        //Default: increase by 1 km/h
-
-        public virtual void IncreaseSpeed(int increasedSpeed =1)
+        public virtual void IncreaseSpeed(int increasedSpeed = 1)
         {
-            speed += increasedSpeed;
-            this.GetSpeed();
+            _speed += increasedSpeed;
+            this.PrintSpeed();
         }
-
-        //Lowers the vehicle's speed according to the user's request
-        //Default: download at -1 km/h
-        //cant be negative speed
 
         public void SlowDownSpeed(int slowSpeed = -1)
         {
-            //check that the speed in not negative
-            if (speed - slowSpeed <= 0)
-            {
-                speed = 0;
-            }
-            else
-            {
-                speed -= slowSpeed;
-            }
-            this.GetSpeed();
+            _speed = _speed - slowSpeed <= 0 ? 0 : _speed - slowSpeed;
+            this.PrintSpeed();
 
         }
 
-        //stop the car,speed is 0 km/h
-
-        public void Stop()
+        public void StopCar()
         {
-            if (speed == 0)
-            {
-                Console.WriteLine("The car is alreadt stopped");
-            }
-            else
-            {
-                speed = 0;
-                Console.WriteLine("The car is stop");
 
+            if (_speed == 0)
+            {
+                Console.WriteLine("The car is already stopped");
+                return;
             }
-            
-           
+            _speed = 0;
+            Console.WriteLine("The car is now stopped");
+
+
         }
     }
 }
