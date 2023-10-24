@@ -6,49 +6,42 @@ using System.Threading.Tasks;
 
 namespace Cars
 {
-    /// <summary>
-    /// The "Lexus" car class inherits from the car class
-    ///It can also play songs that are in the car's song system.
-    /// </summary>
+   
     class Lexus : Car
     {
         private bool isPlayingMusic;
 
-        //constractor
-        public Lexus() : base("Lexus")
+        public Lexus()
         {
+            _type = "Lexus";
+            _speed = 0;
             isPlayingMusic = false;
         }
 
-        // Start Playing Music in the car
         public void StartPlayingMusic()
         {
-            //if the songs is already on 
             if (isPlayingMusic)
             {
                 Console.WriteLine("The songs are already on in your car");
+                return;
             }
-            else
-            {
-                isPlayingMusic = true;
-                Console.WriteLine("The songs are currently turned on in your car");
-            }
+            isPlayingMusic = true;
+            Console.WriteLine("The songs are currently turned on in your car");
+
         }
 
-        // Stop Playing Music in the car
 
         public void StopPlayingMusic()
         {
-            //if the songs is already off 
+
             if (!isPlayingMusic)
             {
                 Console.WriteLine("The songs are already off in your car");
+                return;
             }
-            else
-            {
-                isPlayingMusic = false;
-                Console.WriteLine("The songs are currently turned off in your car");
-            }
+            isPlayingMusic = false;
+            Console.WriteLine("The songs are currently turned off in your car");
+
 
 
         }
