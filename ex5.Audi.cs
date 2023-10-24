@@ -13,13 +13,12 @@ namespace Cars
     /// </summary>
     class Audi : Car
     {
-        //constructor
-
-        public Audi() : base("Audi")
+        public Audi()
         {
+            _speed = 0;
+            _type = "Audi";
         }
 
-        //Increases the speed of the car by 2 times
         public override void IncreaseSpeed(int increaseSpeed)
         {
             base.IncreaseSpeed(increaseSpeed * 2);
